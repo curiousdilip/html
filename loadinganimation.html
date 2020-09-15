@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loading Animation</title>
+	<style type="text/css">
+		.loader{
+			width: 84px;
+			height: 84px;
+			margin: 200px auto;
+			transform: rotate(45deg);
+			position: relative;
+			animation: animate 1.2s infinite ease-in-out;	
+		}
+
+		.loader span{
+			background: #ff6600;
+			width: 40px;
+			height: 40px;
+			border: 1px solid #ff6600;
+			border-radius: 5px;
+			display: block;
+			position: absolute;
+			animation: animate_1 1.2s infinite ease-in-out both;
+		}
+
+		.loader span:nth-child(1){
+			top: 0;
+			left: 0;
+		}
+
+		.loader span:nth-child(2){
+			background: red;
+			border: 1px solid red;
+			top: 0;
+			right: 0;
+			animation: animate_2 1.2s infinite ease-in-out both;
+		}
+
+		.loader span:nth-child(3){
+			background: green;
+			border: 1px solid green;
+			bottom: 0;
+			left: 0;
+			animation: animate_2 1.2s infinite ease-in-out both;
+		}
+
+		.loader span:nth-child(4){
+			background:purple;
+			border: 1px solid purple;
+			bottom: 0;
+			right: 0;
+		}
+
+		@keyframes animate{
+			0%, 10%, 100%{
+				width: 84px;
+				height: 84px;
+			}
+
+			65%{
+				width: 150px;
+				height: 150px;
+			}
+		}
+
+		@keyframes animate_1{
+			0%, 30%{
+				transform: rotate(0);
+			}
+
+			55%{
+				background: transparent;
+				transform: scale(0.5);
+			}
+
+			100%{
+				transform: rotate(180deg);
+			}
+		}
+
+		@keyframes animate_2{
+			0%, 30%{
+				transform: rotate(0);
+			}
+
+			55%{
+				background: transparent;
+				transform: scale(0.5);
+			}
+
+			100%{
+				transform: rotate(180deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+<div class="loader">
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
+</body>
+</html>
